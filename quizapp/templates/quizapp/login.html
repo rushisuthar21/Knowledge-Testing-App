@@ -1,0 +1,81 @@
+{% extends 'quizapp/base.html' %}
+
+{% block content %}
+<h2 class="text-center">Login</h2>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <form method="post" id="loginForm" class="form-layout">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <button type="button" class="btn btn-secondary btn-block" id="clearBtn">Clear</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .form-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 400px; /* Set a maximum width for the form group */
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        flex: 1;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .form-group input {
+        flex: 2;
+        max-width: 250px; /* Adjust the width of the input field */
+    }
+
+    .d-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px; /* Align with form group width */
+        gap: 10px; /* Space between buttons */
+    }
+
+    .btn-block {
+        width: 25%;
+	margin-left:auto;
+	margin-right:auto;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'quizapp/base.html' %}
+
+{% block content %}
+<h2 class="text-center">Your Scores</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Quiz Date</th>
+                <th scope="col">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.date_taken }}</td>
+                    <td>{{ result.score }}/5</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% if last_percentage is not None %}
+    <h3 class="mt-5">Your Last Quiz Performance</h3>
+    <p><strong>Score Percentage:</strong> {{ last_percentage }}%</p>
+    <p><strong>Message:</strong> {{ performance_message }}</p>
+    {% if allow_retake %}
+        <p class="text-danger">Your last score was below 50%. You can <a href="{% url 'quizapp:quiz' %}">retake the quiz</a>.</p>
+    {% endif %}
+{% endif %}
+
+<h3 class="mt-5">Statistics</h3>
+<p><strong>Average Score:</strong> {{ average_score }}/5</p>
+<p><strong>Highest Score:</strong> {{ highest_score }}/5</p>
+<p><strong>Lowest Score:</strong> {{ lowest_score }}/5</p>
+{% endblock %}
