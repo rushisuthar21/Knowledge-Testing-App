@@ -63,3 +63,4 @@ The goal of this project is to create an interactive and robust quiz platform wh
 2. Install dependencies:  
    ```bash
    pip install -r requirements.txt
+![1](https://github.com/user-attachments/assets/ffb12b0d-9251-42e4-b5ef-5d600fc3ed1c)
