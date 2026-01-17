@@ -1,5 +1,65 @@
-The primary objective of this project is to create an intricate, multiuser web application using Django framework and Python, which is capable of testing users' knowledge on a specific topic. This robust application would house a database containing at least 20 pre-established questions on the chosen topic. For every new test session initiated, the application will randomly select 5 questions from the database to challenge the user.
-Account creation and user management are also fundamental features of the system. Prior to engaging in any quizzes, users must either establish a new account (if they do not have one) or log into their existing account. This implementation provides an effective way to track and record the quiz results for each individual user. The system, consequently, stores the test results in the database, thus allowing users to review their past performances.
-The format for each question will comprise four possible answers, of which only one is correct. Upon completion of the five-question quiz, the system will generate a display showing the user's score and a personalized message based on their performance. The user's score percentage (ranging from 0% to 100%) will also be displayed. Performance messages will vary from "Please try again!" for a lower score range (0/5, 1/5, or 2/5) to "You are a genius!" for a perfect score of 5/5.
-The system will incorporate an additional feature that allows users who score less than 50% to retake the quiz. Moreover, users will be able to view all their past scores, and the application will display the average score across all quizzes, as well as the highest and lowest scores achieved.
-Furthermore, the questions for the quizzes must be selected conscientiously, ensuring they are both relevant and meaningful. These questions must be entirely based on the chosen topic, promoting coherence and consistency throughout the quiz.
+# Django Quiz App 📝
+
+A multi-user **web application** built with **Django** and **Python** to test users' knowledge on a specific topic, track performance, and provide meaningful feedback.
+
+---
+
+## **Project Objective**
+The goal of this project is to create an interactive and robust quiz platform where users can:  
+
+- Test their knowledge through dynamic quizzes.  
+- Track their progress over time.  
+- Retake quizzes to improve their scores.  
+
+---
+
+## **Key Features**
+
+### 1. User Account & Authentication 🔐
+- Users must **register** or **log in** to take quizzes.  
+- User accounts allow **personalized score tracking**.
+
+### 2. Dynamic Quiz Generation 🎯
+- Database contains **20+ pre-defined questions** on a chosen topic.  
+- Each quiz randomly selects **5 questions** for each session.
+
+### 3. Question Format ❓
+- Each question has **4 possible answers**, with **1 correct answer**.  
+- Ensures clarity and consistency across quizzes.
+
+### 4. Instant Scoring & Feedback 🏆
+- Users receive:  
+  - **Score out of 5**  
+  - **Percentage score** (0%–100%)  
+  - **Performance message** based on the score:  
+    - 0–2 correct: *“Please try again!”*  
+    - 3–4 correct: *“Good effort!”*  
+    - 5 correct: *“You are a genius!”*
+
+### 5. Retake Option 🔄
+- Users scoring **less than 50%** can **retake the quiz**.
+
+### 6. Performance Tracking & Analytics 📊
+- Users can **view all past quiz scores**.  
+- Displays **average, highest, and lowest scores** across all quizzes.
+
+### 7. Relevant & Meaningful Questions ✅
+- Questions are **carefully curated** to maintain **topic coherence**.  
+- Promotes an effective learning experience.
+
+---
+
+## **Technology Stack**
+
+- **Backend:** Python, Django  
+- **Database:** SQLite (or any relational database)  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Authentication:** Django’s built-in authentication system  
+
+---
+
+## **Usage**
+1. Clone the repository  
+2. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
